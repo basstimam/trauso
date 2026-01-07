@@ -1,119 +1,94 @@
-# TeraBox Downloader CLI/GUI
+# Trauso (TeraBox Downloader) v2
 
-A fast and easy-to-use TeraBox file downloader application. Available in both Command Line Interface (CLI) and Graphical User Interface (GUI) versions.
+![License](https://img.shields.io/github/license/basstimam/trauso)
+![Version](https://img.shields.io/github/v/release/basstimam/trauso)
 
-![TeraBox Downloader Screenshot](ss/ss1.png)
+A modern, fast, and robust TeraBox file downloader built with **Tauri v2** (Rust + React). Now faster, lighter, and more reliable.
 
-## ✨ Features
+![Trauso Screenshot](ss/ss1.png)
 
-- 🚀 Aria2-based download manager for maximum speed
-- 📂 Multiple file download support
-- 🎯 Resume interrupted downloads
-- 📊 Real-time progress bar
-- 📋 Download history
-- ⚙️ Flexible download configuration settings
-- 🌙 Dark/Light mode (GUI version)
-- 💻 Modern interface with Sun Valley theme (GUI version)
+## ✨ New Features (v2)
 
-## 🔧 System Requirements
-
-- Windows 10 or newer
-- Python 3.8+
-- Internet connection
+- **🚀 Native Performance**: Built with Rust (Backend) and React (Frontend). Lightweight (~13MB) and blazing fast.
+- **🛡️ Robust Fetch Engine**: 
+  - Auto-fallback fetching (tries multiple API endpoints automatically).
+  - Handles generic "404" or "Unknown Error" gracefully.
+- **⚙️ Advanced Queue System**:
+  - **Sequential Mode (Default)**: Downloads files 1-by-1 for stability.
+  - **Parallel Mode**: Download up to 5 files simultaneously (Async).
+  - **Auto Server Switch**: Automatically switches between Server 1 and Server 2 if one fails.
+- **🖥️ Seamless Dashboard**: All-in-one interface. No more popup windows.
+  - Fetch, Select, and Monitor downloads in a single view.
+  - Native "Browse Folder" dialog for download location.
+- **🔄 Auto Update**: Automatically checks for updates from GitHub Releases.
+- **🛑 Graceful Control**: 
+  - Pause/Resume/Cancel individual downloads.
+  - "Clear All Queue" to remove pending/error items instantly.
+  - Background process management (auto-kill aria2 on exit).
 
 ## 📥 Installation
 
-### Method 1: Download Executable (Recommended)
+1. Go to [Releases Page](https://github.com/basstimam/trauso/releases).
+2. Download the latest `trauso_setup.exe` (Installer) or `trauso.exe` (Portable).
+3. **Run and Enjoy!** No Python or external dependencies required.
 
-1. Download the latest version from [Releases](https://github.com/basstimam/terabox-cli/releases)
-2. Extract the zip file to your desired folder
-3. Run `Trauso.exe`
+## 📚 Usage guide
 
+1. **Paste URL**: Copy your TeraBox link (supports `terabox.com`, `1024terabox.com`, `terabox.app`, etc).
+2. **Fetch**: Click "Fetch". The file list will appear on the left.
+3. **Select Files**: Choose files you want to download (or "Select All").
+4. **Queue**: Click "Add to Queue". Files will move to the right panel.
+5. **Start**: If not auto-started, click "Start" to begin downloading.
 
-## 📚 Usage
+### ⚙️ Settings (Top Right Gear Icon)
+- **Download Location**: Choose where files are saved.
+- **Download Server**: Force Server 1 or Server 2 (Default: Server 2).
+- **Download Mode**: Switch between Sequential (1-by-1) or Parallel downloads.
 
-### GUI Version
+## 🛠️ Development (Build from Source)
 
-1. Run `Trauso.exe` 
-2. Paste your TeraBox URL
-3. Click "Process URL"
-4. Select the files you want to download
-5. Click "Download Selected" or "Download All"
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+)
+- [Rust](https://www.rust-lang.org/tools/install) (latest stable)
+- [C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) (for Windows)
 
+### Commands
 
-## ⚙️ Configuration
+```bash
+# 1. Clone Repo
+git clone https://github.com/basstimam/trauso.git
+cd trauso
 
-Settings can be modified through:
-- GUI: Settings Menu
-- CLI: `config/settings.json` file
+# 2. Install Dependencies
+npm install
 
-Available settings:
-- Download directory
-- Maximum connections
-- Download splitting
-- Minimum split size
-- User agent
+# 3. Run Development Mode (Hot Reload)
+npm run tauri dev
 
-## 📋 Detailed Features
-
-### Download Manager
-- Aria2-based for maximum performance
-- Multi-connection download
-- Resume interrupted downloads
-- Bandwidth management
-
-### Interface (GUI)
-- Modern Sun Valley theme
-- Dark/Light mode
-- Real-time progress bar
-- Download history
-- File browser
-
-### Security
-- No sensitive data storage
-- File integrity verification
-- Troubleshooting logs
+# 4. Build for Production (Output: src-tauri/target/release/)
+npm run tauri build
+```
 
 ## 🔍 Troubleshooting
 
-### Download Failed
-1. Ensure the TeraBox URL is valid and active
-2. Check your internet connection
-3. Try using a VPN if needed
-4. Check the `logs` folder for detailed errors
+**"Failed to get info" / 404 Error:**
+- Ensure the link is public and not password-protected (password support coming soon).
+- Try changing your IP/VPN if Cloudflare is blocking requests.
+- The app automatically tries multiple endpoints, so persistent errors usually mean the link is dead or IP banned.
 
-### "Not a valid Win32 application" Error
-1. Make sure you're using Windows 10 or newer
-2. Reinstall the application
-3. Run as Administrator
-
-## 📝 Notes
-
-- Files are downloaded to the `downloads` folder (default)
-- Application logs are stored in the `logs` folder
-- Settings are saved in the `config` folder
-- The `aria2` folder contains aria2c.exe used for downloading
-
-## 🤝 Contributing
-
-Contributions are always welcome! Please feel free to submit Pull Requests or create Issues for bugs/suggestions.
+**Download Speed Issues:**
+- Trauso uses `aria2` with multi-connection optimization. Speed depends on TeraBox servers and your ISP.
+- Try switching between "Server 1" and "Server 2" in Settings.
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
 
 ## ☕ Support
 
-If you find this application helpful, you can support the development through:
+If you find this useful, consider supporting the development:
 
 [![Saweria](https://img.shields.io/badge/Saweria-Support%20via%20Saweria-orange)](https://saweria.co/arumam)
 
-## 📞 Contact
-
-- GitHub: [@basstimam](https://github.com/basstimam)
-- Email: [basstimam@gmail.com]
-
-## 🙏 Credits
-
-- Icon by [Author]
-- Sun Valley theme by [rdbende](https://github.com/rdbende/Sun-Valley-ttk-theme) 
+---
+*Disclaimer: This tool is for educational purposes only. Please respect copyright laws and TeraBox terms of service.*
