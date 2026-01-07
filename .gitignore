@@ -1,48 +1,24 @@
-# Rust
-target/
-src-tauri/target/
-**/*.rs.bk
-
-# Node
-node_modules/
-dist/
-trauso/node_modules/
-trauso/dist/
-
-# Tauri / Build Output
-src-tauri/gen/
-src-tauri/capabilities/*.json
-!src-tauri/capabilities/default.json
-
-# Binaries & Installers
-*.exe
-*.msi
-*.dmg
-*.app
-*.deb
-*.rpm
-*.zip
-*.tar.gz
-*.rar
-
 # Logs
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment
-.env
-.env.local
+node_modules
+dist
+dist-ssr
+*.local
 
-# Editor
-.vscode/
-.idea/
-.cursor/
-*.swp
-*.swo
-
-# OS
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
