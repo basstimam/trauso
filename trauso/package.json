@@ -14,7 +14,11 @@
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2.4.2",
     "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-process": "^2.3.1",
+    "@tauri-apps/plugin-store": "^2.4.1",
+    "@tauri-apps/plugin-updater": "^2.9.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.523.0",
@@ -29,9 +33,9 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.10",
+    "tailwindcss": "^3.4.19",
     "typescript": "~5.6.2",
     "vite": "^6.0.3"
   }
